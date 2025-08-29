@@ -3,17 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dojang Quest</title>
+  <title>Taekwondo Mastery Path</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-800 p-3 rounded mb-6 flex justify-between items-center">
+    <a href="index.html" class="text-lg font-bold text-yellow-400">Home</a>
+    <div class="space-x-4">
+      <a href="mastery.html" class="text-white hover:text-yellow-400">Mastery Path</a>
+      <a href="intro.html" class="text-white hover:text-yellow-400">Intro</a>
+    </div>
+  </nav>
   <div class="max-w-sm mx-auto p-4 space-y-6">
 
     <!-- Header -->
     <header class="text-center">
       <h1 class="text-3xl font-bold">🥋 Taekwondo Mastery Path</h1>
-      <p class="text-sm text-gray-400">Train. Level Up. Master Taekwondo.</p>
+      <p class="text-sm text-gray-400 mb-2">Train. Level Up. Master Taekwondo.</p>
+      <div id="avatarDisplay" class="flex flex-col items-center justify-center mt-2">
+        <img id="avatarImg" src="tkAppMaleAvatar.png" alt="Avatar" class="w-16 h-16 rounded-full border-2 mb-2" />
+        <p id="avatarLabel">👤 Avatar: Male | 🎯 Goal: Black Belt</p>
+      </div>
     </header>
 
     <!-- Belt & XP Display -->
@@ -42,16 +54,15 @@
       </button>
     </section>
 
-    <!-- Avatar & Settings -->
-    <section class="text-center text-sm text-gray-400">
-      <div id="avatarDisplay" class="flex flex-col items-center justify-center">
-        <img id="avatarImg" src="tkAppMaleAvatar.png" alt="Avatar" class="w-16 h-16 rounded-full border-2 mb-2" />
-        <p id="avatarLabel">👤 Avatar: Male | 🎯 Goal: Black Belt</p>
-      </div>
+    <!-- Mastery Path Link -->
+    <section class="text-center mt-4">
+      <a href="mastery.html" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded font-semibold inline-block shadow">Go to Mastery Path</a>
     </section>
 
   </div>
 
+  <!-- Success sound effect from Pixabay -->
+  <audio id="completeSound" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfe7b3b.mp3" preload="auto"></audio>
   <script src="app.js"></script>
   <script>
     // Show avatar based on localStorage
