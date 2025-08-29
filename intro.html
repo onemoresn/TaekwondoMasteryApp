@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dojang Quest - Choose Your Avatar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div class="max-w-sm mx-auto p-4 space-y-6">
+    <header class="text-center">
+      <h1 class="text-3xl font-bold mb-2">Welcome to Dojang Quest!</h1>
+      <p class="text-gray-400 mb-4">Select your avatar to begin your Taekwondo journey.</p>
+    </header>
+    <form id="avatarForm" class="space-y-4">
+      <div class="flex justify-center space-x-8">
+        <label class="cursor-pointer">
+          <input type="radio" name="avatar" value="male" class="hidden" checked>
+          <img src="tkAppMaleAvatar.png" alt="Male Avatar" class="w-24 h-24 rounded-full border-4 border-blue-500 hover:border-yellow-400 transition">
+          <div class="text-center mt-2">Male</div>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" name="avatar" value="female" class="hidden">
+          <img src="tkAppFemaleAvatar.png" alt="Female Avatar" class="w-24 h-24 rounded-full border-4 border-pink-500 hover:border-yellow-400 transition">
+          <div class="text-center mt-2">Female</div>
+        </label>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="bg-green-500 px-6 py-2 rounded hover:bg-green-600 font-semibold">Start Training</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    document.getElementById('avatarForm').onsubmit = function(e) {
+      e.preventDefault();
+      const avatar = document.querySelector('input[name="avatar"]:checked').value;
+      localStorage.setItem('tkAvatar', avatar);
+      window.location.href = 'index.html';
+    };
+  </script>
+</body>
+</html>
