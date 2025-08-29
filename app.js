@@ -97,6 +97,9 @@ function completeLesson() {
 function completeTask() {
   xp += 50;
   showConfetti();
+  // Play success chime
+  const sound = document.getElementById('completeSound');
+  if (sound) sound.play();
   checkLevelUp();
   updateUI();
 }
