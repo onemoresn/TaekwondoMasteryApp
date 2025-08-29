@@ -42,13 +42,29 @@
       </button>
     </section>
 
-    <!-- Avatar & Settings (Placeholder) -->
+    <!-- Avatar & Settings -->
     <section class="text-center text-sm text-gray-400">
-      <p>👤 Avatar: Default | 🎯 Goal: Black Belt</p>
+      <div id="avatarDisplay" class="flex flex-col items-center justify-center">
+        <img id="avatarImg" src="tkAppMaleAvatar.png" alt="Avatar" class="w-16 h-16 rounded-full border-2 mb-2" />
+        <p id="avatarLabel">👤 Avatar: Male | 🎯 Goal: Black Belt</p>
+      </div>
     </section>
 
   </div>
 
   <script src="app.js"></script>
+  <script>
+    // Show avatar based on localStorage
+    const avatar = localStorage.getItem('tkAvatar') || 'male';
+    const avatarImg = document.getElementById('avatarImg');
+    const avatarLabel = document.getElementById('avatarLabel');
+    if (avatar === 'female') {
+      avatarImg.src = 'tkAppFemaleAvatar.png';
+      avatarLabel.textContent = '👤 Avatar: Female | 🎯 Goal: Black Belt';
+    } else {
+      avatarImg.src = 'tkAppMaleAvatar.png';
+      avatarLabel.textContent = '👤 Avatar: Male | 🎯 Goal: Black Belt';
+    }
+  </script>
 </body>
 </html>
